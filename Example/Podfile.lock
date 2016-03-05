@@ -1,0 +1,14 @@
+PODS:
+  - SlidingTabBar (0.1.0)
+
+DEPENDENCIES:
+  - SlidingTabBar (from `../`)
+
+EXTERNAL SOURCES:
+  SlidingTabBar:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SlidingTabBar: 5695bf05359dfc44028c36f04ce4b1a7449d484b
+
+COCOAPODS: 0.39.0
