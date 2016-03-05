@@ -8,11 +8,18 @@
 [![License](https://img.shields.io/cocoapods/l/SlidingTabBar.svg?style=flat)](http://cocoapods.org/pods/SlidingTabBar)
 [![Platform](https://img.shields.io/cocoapods/p/SlidingTabBar.svg?style=flat)](http://cocoapods.org/pods/SlidingTabBar)
 
+A custom TabBar view with sliding animation written in Swift. Inspired by this [dribble](https://dribbble.com/shots/2071319-GIF-of-the-Tapbar-Interactions).
+
+![Animation](screenshot.gif)
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+- iOS 8.0+
+- Xcode 7
+- Swift 2
 
 ## Installation
 
