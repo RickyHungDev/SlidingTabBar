@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  SlidingTabBar: 5695bf05359dfc44028c36f04ce4b1a7449d484b
+  SlidingTabBar: fe3797694f9152869d80bd046f69b98e2d5deafc
 
 COCOAPODS: 0.39.0

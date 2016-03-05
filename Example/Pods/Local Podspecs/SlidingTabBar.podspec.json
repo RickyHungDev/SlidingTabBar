@@ -1,25 +1,24 @@
 {
   "name": "SlidingTabBar",
   "version": "0.1.0",
-  "summary": "A short description of SlidingTabBar.",
-  "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/SlidingTabBar",
-  "license": "MIT",
+  "summary": "SlidingTabBar is custom tabBar view with sliding animation for tabBar item selection.",
+  "homepage": "https://github.com/bardonadam/SlidingTabBar",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
   "authors": {
     "Adam Bardon": "bardon.adam@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/SlidingTabBar.git",
+    "git": "https://github.com/bardonadam/SlidingTabBar.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://twitter.com/bardonadam",
   "platforms": {
     "ios": "8.0"
   },
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*",
-  "resource_bundles": {
-    "SlidingTabBar": [
-      "Pod/Assets/*.png"
-    ]
-  }
+  "frameworks": "UIKit"
 }
