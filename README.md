@@ -86,12 +86,14 @@ func didSelectViewController(tabBarView: SlidingTabBar, atIndex index: Int) {
 // MARK: - UITabBarControllerDelegate
     
 func tabBarController(tabBarController: UITabBarController, animationControllerForTransitionFromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
+    
+    // use same duration as for tabBarView.slideAnimationDuration    
     return SlidingTabAnimatedTransitioning(transitionDuration: 0.6)
 }
 ```
 
 Finally set things up in the Storyboard:
+
 1. Add native _UITabBarController_ to the storyboard, establish relationships with its view controllers.
 2. Choose YourViewController as custom class for _UITabBarController_.
 3. Set images for all tab bar items:
