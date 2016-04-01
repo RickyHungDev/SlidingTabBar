@@ -8,7 +8,8 @@
 
 
 A custom TabBar view with sliding animation written in Swift. Inspired by this [dribble](https://dribbble.com/shots/2071319-GIF-of-the-Tapbar-Interactions).
-Also, read how it was done on my blog - [part 1](http://blog.adambardon.com/how-to-create-custom-tab-bar-in-swift-part-1/), [part 2](http://blog.adambardon.com/how-to-create-custom-tab-bar-in-swift-part-2/).
+
+Also, read how it was done on my blog - [part 1](http://blog.adambardon.com/how-to-create-custom-tab-bar-in-swift-part-1/?utm_source=github), [part 2](http://blog.adambardon.com/how-to-create-custom-tab-bar-in-swift-part-2/?utm_source=github).
 
 ![Animation](screenshot.gif)
 
