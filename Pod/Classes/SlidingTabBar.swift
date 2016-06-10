@@ -16,7 +16,7 @@ public protocol SlidingTabBarDataSource {
 }
 
 public protocol SlidingTabBarDelegate {
-    func didSelectViewController(tabBarView: SlidingTabBar, atIndex index: Int, from from: Int)
+    func didSelectViewController(tabBarView: SlidingTabBar, atIndex index: Int, from: Int)
 }
 
 public class SlidingTabBar: UIView {
@@ -131,12 +131,12 @@ public class SlidingTabBar: UIView {
             slidingTabBarItems.append(slidingTabBarItem)
             
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: container.width, height: container.height))
-            button.addTarget(self, action: "barItemTapped:", forControlEvents: UIControlEvents.TouchUpInside)
+            button.addTarget(self, action: #selector(barItemTapped), forControlEvents: UIControlEvents.TouchUpInside)
             
             slidingTabBarItem.addSubview(button)
             tabBarButtons.append(button)
             
-            index++
+            index += 1
         }
         
         self.slidingTabBarItems[initialTabBarItemIndex].iconView.tintColor = selectedTabBarItemTintColor
