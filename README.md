@@ -1,7 +1,7 @@
 # SlidingTabBar
 
 [![CocoaPods](https://img.shields.io/cocoapods/p/SlidingTabBar.svg)](http://cocoapods.org/pods/SlidingTabBar)
-[![Swift 2.2](https://img.shields.io/badge/Swift-2.1-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 2.2](https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![Twitter](https://img.shields.io/badge/Twitter-@bardonadam-blue.svg?style=flat)](http://twitter.com/bardonadam)
 [![Version](https://img.shields.io/cocoapods/v/SlidingTabBar.svg?style=flat)](http://cocoapods.org/pods/SlidingTabBar)
 [![License](https://img.shields.io/cocoapods/l/SlidingTabBar.svg?style=flat)](http://cocoapods.org/pods/SlidingTabBar)
@@ -15,8 +15,8 @@ Also, read how it was done on my blog - [part 1](http://blog.adambardon.com/how-
 
 ## Requirements
 - iOS 8.0+
-- Xcode 7.2
-- Swift 2
+- Xcode 7.2+
+- Swift 2+
 
 ## Installation
 
@@ -49,7 +49,10 @@ self.selectedIndex = 1
 self.delegate = self
 ```
 
-Create class variable `var tabBarView: SlidingTabBar!`.
+Create class variables:  
+`var tabBarView: SlidingTabBar!`  
+`var fromIndex: Int!`  
+`var toIndex: Int!`  
 
 Now initialize `tabBarView` in _viewDidLoad()_:
 
@@ -81,7 +84,9 @@ func tabBarItemsInSlidingTabBar(tabBarView: SlidingTabBar) -> [UITabBarItem] {
     
 // MARK: - SlidingTabBarDelegate
     
-func didSelectViewController(tabBarView: SlidingTabBar, atIndex index: Int) {
+func didSelectViewController(tabBarView: SlidingTabBar, atIndex index: Int, from: Int) {
+    self.fromIndex = from
+    self.toIndex = index
     self.selectedIndex = index
 }
     
@@ -89,8 +94,14 @@ func didSelectViewController(tabBarView: SlidingTabBar, atIndex index: Int) {
     
 func tabBarController(tabBarController: UITabBarController, animationControllerForTransitionFromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     
-    // use same duration as for tabBarView.slideAnimationDuration    
-    return SlidingTabAnimatedTransitioning(transitionDuration: 0.6)
+    // use same duration as for tabBarView.slideAnimationDuration
+    // you can choose direction in which view controllers should be changed:
+    // - .Both(default),
+    // - .Reverse,
+    // - .Left,
+    // - .Right 
+    return SlidingTabAnimatedTransitioning(transitionDuration: 0.6, direction: .Both,
+     fromIndex: self.fromIndex, toIndex: self.toIndex)
 }
 ```
 

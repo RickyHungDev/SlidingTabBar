@@ -12,6 +12,8 @@ import SlidingTabBar
 class ViewController: UITabBarController, SlidingTabBarDataSource, SlidingTabBarDelegate, UITabBarControllerDelegate {
     
     var tabBarView: SlidingTabBar!
+    var fromIndex: Int!
+    var toIndex: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,15 +49,17 @@ class ViewController: UITabBarController, SlidingTabBarDataSource, SlidingTabBar
     
     // MARK: - SlidingTabBarDelegate
     
-    func didSelectViewController(tabBarView: SlidingTabBar, atIndex index: Int) {
-        self.selectedIndex = index
+    func didSelectViewController(tabBarView: SlidingTabBar, atIndex index: Int, from: Int) {
+        self.fromIndex = from
+        self.toIndex = index
+        self.selectedIndex = index        
     }
     
     // MARK: - UITabBarControllerDelegate
     
     func tabBarController(tabBarController: UITabBarController, animationControllerForTransitionFromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        return SlidingTabAnimatedTransitioning(transitionDuration: 0.6)
+        return SlidingTabAnimatedTransitioning(transitionDuration: 0.6, direction: .Reverse, fromIndex: self.fromIndex, toIndex: self.toIndex)
     }
 }
 

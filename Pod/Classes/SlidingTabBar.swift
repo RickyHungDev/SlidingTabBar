@@ -16,7 +16,7 @@ public protocol SlidingTabBarDataSource {
 }
 
 public protocol SlidingTabBarDelegate {
-    func didSelectViewController(tabBarView: SlidingTabBar, atIndex index: Int)
+    func didSelectViewController(tabBarView: SlidingTabBar, atIndex index: Int, from from: Int)
 }
 
 public class SlidingTabBar: UIView {
@@ -207,10 +207,11 @@ public class SlidingTabBar: UIView {
     
     public func barItemTapped(sender : UIButton) {
         let index = tabBarButtons.indexOf(sender)!
+        let from = selectedTabBarItemIndex
         
-        animateTabBarSelection(from: selectedTabBarItemIndex, to: index)
+        animateTabBarSelection(from: from, to: index)
         selectedTabBarItemIndex = index
-        delegate.didSelectViewController(self, atIndex: index)
+        delegate.didSelectViewController(self, atIndex: index, from: from)
     }
 
 }
